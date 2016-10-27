@@ -1,14 +1,8 @@
-<canvas id=a>
-<script>
+<canvas id=a><script>
 d=[k=0];
-setInterval(`
-a.width^=0;
-e=[];
-for(i=0;i<98*98;i++){
-  n=0;
-  if(k)for(j of[1,97,98,99])n+=!!d[i+j]+!!d[i-j];
-  else d[i]=e[i]=((i%98)==49)?1:0;
-  if(e[i]=[x=d[i],,x,!x][n])a.getContext("2d").fillRect(i%98,~~(i/98),1,1);
-}
+setInterval(`for(e=[a.width^=i=0];i<98*98;i++)
+n=0,
+k?[1,97,98,99].map(j=>n+=!!d[i+j]+!!d[i-j]):d[i]=e[i]=i%98-49?0:1,
+(e[i]=[x=d[i],,x,!x][n])&&a.getContext("2d").fillRect(i%98,~~(i/98),1,1);
 d=e;k++`,9)
 </script>
