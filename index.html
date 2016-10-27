@@ -1,0 +1,57 @@
+<canvas id=a height=300>
+<script>
+
+// Init dataset
+z=a.getContext`2d`;
+d=[];
+for(i=0;i<300*300;i++){
+
+  // Central column
+  d[i]=((i%300)==150)?1:0;
+  
+  // Draw
+  if(d[i]){
+    z.fillRect(i%300,~~(i/300),1,1)
+  }
+}
+
+
+
+// Evolve
+setInterval(function(){
+
+  // Reset canvas
+  a.width^=0;
+  
+  // New dataset
+  e=[];
+  
+  // Loop
+  for(i=0;i<300*300;i++){
+
+    // Count live neighbours in previous dataset
+    n=0;
+    if(d[i-301])n++;
+    if(d[i-300])n++;
+    if(d[i-299])n++;
+    if(d[i-1])n++;
+    if(d[i+1])n++;
+    if(d[i+299])n++;
+    if(d[i+300])n++;
+    if(d[i+301])n++;
+    
+    // Live or die (same rules than Game of Life, except "2" becomes "0")
+    e[i]=[x=d[i],,x,!x][n];
+    
+    // Draw
+    if(e[i]){
+      z.fillRect(i%300,~~(i/300),1,1)
+    }
+  }
+  
+  // Save dataset
+  d=e;
+
+}, 10)
+
+</script>
