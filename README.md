@@ -9,4 +9,4 @@ Golfed with : @sqaxomonophonen @subzey @nderscore @veubeke
 
 Commented : http://xem.github.io/miniConwaySerpinski
 
-golfed : http://xem.github.io/miniConwaySerpinski/index.min.html
+golfed (188b): http://xem.github.io/miniConwaySerpinski/index.min.html
